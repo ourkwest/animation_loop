@@ -2,6 +2,9 @@ package uk.me.westmacott;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 class AnimationLoop implements Runnable {
 
@@ -34,6 +37,14 @@ class AnimationLoop implements Runnable {
 
     private static class MyPanel extends JPanel {
 
+        private static final Map<RenderingHints.Key, Object> HINTS;
+        static {
+            final Map<RenderingHints.Key, Object> hints = new HashMap<RenderingHints.Key, Object>();
+            hints.put(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            hints.put(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+            HINTS = Collections.unmodifiableMap(hints);
+        }
+
         private final Dimension size;
         private World target;
 
@@ -48,6 +59,7 @@ class AnimationLoop implements Runnable {
             Graphics2D g2 = (Graphics2D) g;
             g2.setColor(Color.WHITE);
             g2.fillRect(0, 0, size.width, size.height);
+            g2.addRenderingHints(HINTS);
             target.render(g2);
         }
 
