@@ -1,12 +1,16 @@
-package uk.me.westmacott;
+package uk.me.westmacott.example;
+
+import uk.me.westmacott.animation.AnimationLoop;
+import uk.me.westmacott.world.AbstractWorld;
+import uk.me.westmacott.world.World;
 
 import java.awt.*;
 
-public class Main {
+public class Example {
 
     public static void main(String[] args) {
 
-        World myWorld = new AbstractWorld("Test World", 300, 500) {
+        World exampleWorld = new AbstractWorld("Test World", 300, 500) {
 
             double a = 0.0;
 
@@ -24,6 +28,6 @@ public class Main {
             }
         };
 
-        new AnimationLoop(myWorld).tickAt(100).renderAt(30);
+        new AnimationLoop(exampleWorld).tickAt(100).renderAt(30);
     }
 }

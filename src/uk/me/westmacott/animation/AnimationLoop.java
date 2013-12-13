@@ -1,6 +1,9 @@
-package uk.me.westmacott;
+package uk.me.westmacott.animation;
 
-class AnimationLoop {
+import uk.me.westmacott.world.World;
+import uk.me.westmacott.animation.timing.Metronome;
+
+public class AnimationLoop {
 
     private final AnimationView renderable;
     private final Runnable tickable;

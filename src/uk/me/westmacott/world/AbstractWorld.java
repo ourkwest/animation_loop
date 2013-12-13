@@ -1,8 +1,10 @@
-package uk.me.westmacott;
+package uk.me.westmacott.world;
+
+import uk.me.westmacott.world.World;
 
 import java.awt.*;
 
-abstract class AbstractWorld implements World {
+public abstract class AbstractWorld implements World {
 
     private final Dimension size;
     private String name;

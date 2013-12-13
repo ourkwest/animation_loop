@@ -1,4 +1,6 @@
-package uk.me.westmacott;
+package uk.me.westmacott.animation;
+
+import uk.me.westmacott.world.Renderable;
 
 import javax.swing.*;
 import java.awt.*;

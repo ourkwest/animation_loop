@@ -1,7 +1,6 @@
-package uk.me.westmacott;
+package uk.me.westmacott.world;
 
 import java.awt.*;
-
 
 public interface Renderable {
 

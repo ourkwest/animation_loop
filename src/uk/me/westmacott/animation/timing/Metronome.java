@@ -1,4 +1,4 @@
-package uk.me.westmacott;
+package uk.me.westmacott.animation.timing;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;

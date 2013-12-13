@@ -1,4 +1,4 @@
-package uk.me.westmacott;
+package uk.me.westmacott.animation.timing;
 
 class CompressionWindow {
 
