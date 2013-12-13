@@ -24,7 +24,7 @@ public class Main {
             }
         };
 
-        new AnimationLoop(myWorld, 30).start();
+        new AnimationLoop(myWorld, myWorld).start(30);
 
     }
 }

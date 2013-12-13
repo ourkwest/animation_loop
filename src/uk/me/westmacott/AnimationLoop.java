@@ -9,17 +9,17 @@ import java.util.Map;
 class AnimationLoop implements Runnable {
 
     private final MyPanel panel;
-    private final World world;
-    private final int framesPerSecond;
+    private final Renderable renderable;
+    private final Temporal temporal;
 
-    public AnimationLoop(World world, int framesPerSecond) {
-        this.world = world;
-        this.panel = new MyPanel(world);
-        this.framesPerSecond = framesPerSecond;
+    public AnimationLoop(Renderable renderable, Temporal temporal) {
+        this.renderable = renderable;
+        this.temporal = temporal;
+        this.panel = new MyPanel(renderable);
     }
 
-    public void start() {
-        JFrame frame = new JFrame(world.getName());
+    public void start(int framesPerSecond) {
+        JFrame frame = new JFrame(renderable.getName());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(this.panel, BorderLayout.CENTER);
         frame.pack();
@@ -31,7 +31,7 @@ class AnimationLoop implements Runnable {
 
     @Override
     public void run() {
-        this.world.tick();
+        this.temporal.tick();
         this.panel.repaint();
     }
 
@@ -46,9 +46,9 @@ class AnimationLoop implements Runnable {
         }
 
         private final Dimension size;
-        private World target;
+        private Renderable target;
 
-        private MyPanel(World target) {
+        private MyPanel(Renderable target) {
             this.target = target;
             this.size = target.getSize();
             setPreferredSize(size);
