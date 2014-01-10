@@ -8,13 +8,13 @@
 (defn tick-fn [] (def a (+ a 0.01)))
 
 (defn render-fn [g]
-  (let [x (* 200 (Math/sin a))
-        y (* 200 (Math/cos a))]
+  (let [x (* 100 (Math/sin a))
+        y (* 100 (Math/cos a))]
     (.setColor g Color/BLACK)
-    (.drawLine g 250 250 (+ 250 x) (+ 250 y))))
+    (.drawLine g 150 150 (+ 150 x) (+ 150 y))))
 
 (def my-world
-  (proxy [AbstractWorld] ["My Clojure World" 500 500]
+  (proxy [AbstractWorld] ["My Clojure World" 300 500]
     (tick [] (tick-fn))
     (render [g2d] (render-fn g2d))))
 
