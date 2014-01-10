@@ -1,4 +1,3 @@
-
 # Animation Loop
 
 A simple Java animation loop for playing around.
@@ -10,5 +9,5 @@ A simple Java animation loop for playing around.
 
 ## Clojure
 
-1. Compile the java classes. e.g. javac `find ./src -name "*.java"`
+1. Compile the java classes. e.g. ``javac `find ./src -name "*.java"` ``
 2. You should now be able to fire up a repl in the src directory and run (use 'uk.me.westmacott.example.example)
